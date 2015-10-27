@@ -7,6 +7,10 @@ $api->version('v1', function ($api) {
 	// Set our namespace for the underlying routes
 	$api->group(['namespace' => 'Api\Controllers', 'middleware' => 'cors'], function ($api) {
 
+		$api->get('/', function() {
+			return response()->json(['Welcome to Laravel API Starter']);
+		});
+
 		// Login route
 		$api->post('login', 'AuthController@authenticate');
 		$api->post('register', 'AuthController@register');
