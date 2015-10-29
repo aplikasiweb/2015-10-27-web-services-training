@@ -28,6 +28,11 @@ $api->version('v1', function ($api) {
 			$api->delete('cats/{id}', 'CatController@destroy');
 			$api->put('cats/{id}', 'CatController@update');
 
+			$api->get('colors', 'ColorController@index');
+			$api->post('colors', 'ColorController@store');
+			$api->get('colors/{id}', 'ColorController@show');
+			$api->delete('colors/{id}', 'ColorController@destroy');
+			$api->put('colors/{id}', 'ColorController@update');
 		});
 
 	});
